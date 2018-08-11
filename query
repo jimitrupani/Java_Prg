@@ -1,0 +1,5 @@
+select model.name , model.model_id, revision.rev_id , max(revision.created_at)
+FROM model
+LEFT JOIN revision
+ON model.model_id = revision.model_id
+GROUP BY model.name, model.model_id
